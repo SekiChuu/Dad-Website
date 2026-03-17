@@ -1,0 +1,124 @@
+/* Basic, clean starter styling */
+:root{
+  --max: 1100px;
+  --pad: 24px;
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --text: #1d2433;
+  --muted: #5b6477;
+  --line: #e5e7ee;
+}
+
+*{ box-sizing: border-box; }
+html, body{ margin: 0; padding: 0; }
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.container{
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+header{
+  position: sticky;
+  top: 0;
+  background: rgba(246,247,249,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  gap: 16px;
+}
+
+.brand{
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--text);
+}
+.brand strong{ font-size: 16px; letter-spacing: 0.2px; }
+.brand span{ font-size: 12px; color: var(--muted); }
+
+nav ul{
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+nav a{
+  text-decoration: none;
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+nav a:hover{
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 7px 9px; /* offset border */
+}
+
+main{ padding: 28px 0 40px; }
+
+.hero{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 34px;
+}
+.hero h1{ margin: 0 0 8px; font-size: 34px; line-height: 1.15; }
+.hero p{ margin: 0; color: var(--muted); max-width: 70ch; }
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+}
+.card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px;
+}
+.card h3{ margin: 0 0 6px; }
+.card p{ margin: 0; color: var(--muted); }
+
+.section-title{
+  margin: 26px 0 10px;
+  font-size: 18px;
+}
+
+.footer{
+  border-top: 1px solid var(--line);
+  padding: 18px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.btn{
+  display: inline-block;
+  margin-top: 16px;
+  text-decoration: none;
+  background: var(--text);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+@media (max-width: 900px){
+  .grid{ grid-template-columns: 1fr; }
+  .hero h1{ font-size: 28px; }
+}

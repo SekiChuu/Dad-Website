@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marin Development | Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <strong>Marin Development</strong>
+        <span>Real Estate Development</span>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Building places people are proud to live and work.</h1>
+      <p>
+        This is a simple starter site. Later we'll make it all nice and special. Hope it helps keep the excitement up!
+      </p>
+      <a class="btn" href="contact.html">Get in touch</a>
+    </section>
+
+    <h2 class="section-title">What we do</h2>
+    <section class="grid">
+      <div class="card">
+        <h3>Development</h3>
+        <p>Ground-up projects, planning, and execution from start to finish.</p>
+      </div>
+      <div class="card">
+        <h3>Acquisitions</h3>
+        <p>Identifying opportunities and underwriting for long-term value.</p>
+      </div>
+      <div class="card">
+        <h3>Project Management</h3>
+        <p>Timelines, contractors, budgets, and quality control.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> Marin Development • All rights reserved
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
