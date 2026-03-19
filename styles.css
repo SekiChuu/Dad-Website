@@ -51,6 +51,17 @@ header {
   backdrop-filter: blur(8px);
 }
 
+.minimal-header {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  background: white;
+}
+
+.brand.center {
+  align-items: center;
+  text-align: center;
+}
+
 .nav {
   display: flex;
   align-items: center;
