@@ -108,7 +108,7 @@ nav a:hover {
 .hero-home {
   background:
     linear-gradient(rgba(26, 36, 33, 0.45), rgba(26, 36, 33, 0.45)),
-    url("images/beach.jpg") center/cover no-repeat;
+    url("beach.jpg") center/cover no-repeat;
 }
 
 .hero-content {
