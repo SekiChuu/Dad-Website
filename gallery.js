@@ -49,32 +49,25 @@
 
   document.addEventListener('keydown', (e) => {
     if (lightbox.getAttribute('aria-hidden') === 'false') {
-      if (e.key === 'Escape') close();
-      if (e.key === 'ArrowRight') next();
-      if (e.key === 'ArrowLeft') prev();
-    }
-  });
-})();
+      /* Scroll reveal observer: applies .reveal then toggles .active when visible */
+      (function(){
+        const selectors = ['.card', '.project-card', '.hero-content', '.section-title', '.hero h1', '.hero-text'];
+        const items = Array.from(document.querySelectorAll(selectors.join(',')));
+        if (!items.length) return;
 
-/* Scroll reveal observer: applies .reveal then toggles .active when visible */
-(function(){
-  const selectors = ['.card', '.project-card', '.hero-content', '.section-title', '.hero h1', '.hero-text'];
-  const items = Array.from(document.querySelectorAll(selectors.join(',')));
-  if (!items.length) return;
+        items.forEach((el) => {
+          el.classList.add('reveal');
+        });
 
-  items.forEach((el, i) => {
-    el.classList.add('reveal');
-  });
-  // Avoid setting many inline styles to reduce layout thrashing; use CSS for timing
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
+        items.forEach(el => observer.observe(el));
+      })();
         entry.target.classList.add('active');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  items.forEach(el => observer.observe(el));
-})();
