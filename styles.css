@@ -1109,3 +1109,63 @@ header {
     border-radius: 34px;
   }
 }
+
+/* Leadership redesign */
+
+#leadership.section-alt {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      rgba(247, 244, 239, 0.72),
+      rgba(247, 244, 239, 0.86)
+    ),
+    url("images/sky.png") center center / cover no-repeat;
+}
+
+#leadership .container {
+  position: relative;
+  z-index: 2;
+}
+
+#leadership::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 95px;
+  width: 240px;
+  height: 74%;
+  border-left: 9px solid rgba(0, 154, 190, 0.55);
+  border-bottom: 9px solid rgba(0, 154, 190, 0.55);
+  border-radius: 90px 0 0 90px;
+  opacity: 0.75;
+}
+
+#leadership::after {
+  content: "";
+  position: absolute;
+  right: 60px;
+  top: 80px;
+  width: 360px;
+  height: 280px;
+  border-top: 9px solid rgba(47, 107, 93, 0.65);
+  border-right: 9px solid rgba(47, 107, 93, 0.65);
+  border-radius: 0 70px 0 0;
+  opacity: 0.75;
+}
+
+.leader-card:first-child {
+  border-top: 6px solid var(--primary);
+}
+
+.leader-card:last-child {
+  align-self: start;
+  margin-top: 0;
+}
+
+@media (max-width: 980px) {
+  #leadership::before,
+  #leadership::after {
+    display: none;
+  }
+}
