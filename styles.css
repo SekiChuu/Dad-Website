@@ -878,3 +878,79 @@ header {
     padding: 24px;
   }
 }
+
+/* Portfolio polish: image blocks + decorative side lines */
+
+.section-portfolio {
+  position: relative;
+  overflow: hidden;
+  background: #f7f1e8;
+}
+
+.section-portfolio::before {
+  content: "";
+  position: absolute;
+  left: 38px;
+  bottom: 34px;
+  width: 210px;
+  height: 420px;
+  border-radius: 120px;
+  background:
+    linear-gradient(rgba(247, 241, 232, 0.18), rgba(247, 241, 232, 0.18)),
+    url("images/beach2.png") center center / cover no-repeat;
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.section-portfolio::after {
+  content: "";
+  position: absolute;
+  right: 70px;
+  bottom: 40px;
+  width: 520px;
+  height: 160px;
+  border-radius: 80px;
+  background:
+    linear-gradient(rgba(247, 241, 232, 0.12), rgba(247, 241, 232, 0.12)),
+    url("images/waves2.png") center center / cover no-repeat;
+  opacity: 0.75;
+  z-index: 0;
+}
+
+.section-portfolio .container {
+  position: relative;
+  z-index: 2;
+}
+
+.section-portfolio .container::before,
+.section-portfolio .container::after {
+  content: "";
+  position: absolute;
+  top: -70px;
+  width: 95px;
+  height: 620px;
+  border-radius: 999px;
+  pointer-events: none;
+  opacity: 0.75;
+  z-index: -1;
+}
+
+.section-portfolio .container::before {
+  left: -190px;
+  border-left: 10px solid rgba(47, 107, 93, 0.55);
+  border-right: 10px solid rgba(255, 255, 255, 0.75);
+  transform: rotate(-10deg);
+}
+
+.section-portfolio .container::after {
+  right: -190px;
+  border-left: 10px solid rgba(255, 255, 255, 0.75);
+  border-right: 10px solid rgba(47, 107, 93, 0.55);
+  transform: rotate(10deg);
+}
+
+.portfolio-card::before {
+  color: var(--primary-dark);
+  font-family: Georgia, serif;
+  font-weight: 700;
+}
