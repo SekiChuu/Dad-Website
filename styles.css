@@ -908,12 +908,23 @@ header {
   position: relative;
   overflow: hidden;
   background: var(--bg);
-  padding-top: 0;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 80px 0;
 }
 
 .contact-section .container {
   width: min(92%, 980px);
+
+  margin: 0 auto;
+
   padding: 44px;
+
   border-radius: 42px;
   background:
     linear-gradient(rgba(223, 240, 235, 0.35), rgba(223, 240, 235, 0.35)),
@@ -939,42 +950,6 @@ header {
   .contact-section .container {
     padding: 24px;
   }
-}
-
-.contact-section::before {
-  content: "";
-  position: absolute;
-
-  top: 60px;
-  left: 80px;
-
-  width: 220px;
-  height: 220px;
-
-  background:
-    url("images/waves2.png")
-    center center / contain no-repeat;
-
-  opacity: 0.18;
-}
-
-.contact-section::after {
-  content: "";
-  position: absolute;
-
-  bottom: 60px;
-  right: 80px;
-
-  width: 220px;
-  height: 220px;
-
-  background:
-    url("images/waves2.png")
-    center center / contain no-repeat;
-
-  opacity: 0.18;
-
-  transform: rotate(180deg);
 }
 
 /* Portfolio polish: image blocks + decorative side lines */
