@@ -777,7 +777,7 @@ header {
       rgba(239, 244, 242, 0.42),
       rgba(239, 244, 242, 0.58)
     ),
-    url("images/rocks.png") center center / cover no-repeat;
+    url("images/rocks.webp") center center / cover no-repeat;
 }
 
 .about-column,
@@ -1059,7 +1059,7 @@ backdrop-filter: none;
       rgba(239, 244, 242, 0.35),
       rgba(239, 244, 242, 0.50)
     ),
-    url("images/rocks.png") center center / cover no-repeat;
+    url("images/rocks.webp") center center / cover no-repeat;
 }
 
 .about-services-layout {
@@ -1118,7 +1118,7 @@ backdrop-filter: none;
       rgba(247, 244, 239, 0.72),
       rgba(247, 244, 239, 0.86)
     ),
-    url("images/sky.png") center center / cover no-repeat;
+    url("images/sky.webp") center center / cover no-repeat;
 }
 
 #leadership .container {
