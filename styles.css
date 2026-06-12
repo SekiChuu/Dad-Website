@@ -693,6 +693,10 @@ header {
   align-items: stretch;
 }
 
+.portfolio-grid {
+  transform: translateX(-35px);
+}
+
 .section-portfolio .card {
   display: grid;
   grid-template-columns: 54px 1fr;
@@ -765,9 +769,38 @@ header {
 }
 
 .about-services-section {
+  position: relative;
+  overflow: hidden;
   background:
-    linear-gradient(rgba(235, 244, 240, 0.78), rgba(235, 244, 240, 0.84)),
+    linear-gradient(rgba(235, 244, 240, 0.80), rgba(235, 244, 240, 0.88)),
     url("images/waves2.png") center center / cover no-repeat;
+}
+
+.about-services-section::before {
+  content: "";
+  position: absolute;
+  top: 70px;
+  left: 55px;
+  width: 130px;
+  height: 105px;
+  border: 8px solid rgba(0, 128, 160, 0.16);
+  border-radius: 48% 52% 42% 58%;
+}
+
+.about-services-section::after {
+  content: "";
+  position: absolute;
+  bottom: 90px;
+  right: 80px;
+  width: 95px;
+  height: 80px;
+  border: 8px solid rgba(47, 107, 93, 0.14);
+  border-radius: 60% 40% 52% 48%;
+}
+
+.about-services-section .container {
+  position: relative;
+  z-index: 2;
 }
 
 .about-services-layout {
@@ -823,7 +856,39 @@ header {
 }
 
 .section-alt {
+  position: relative;
+  overflow: hidden;
   background: #f7f4ef;
+}
+
+.section-alt::before {
+  content: "";
+  position: absolute;
+  left: 60px;
+  top: 170px;
+  width: 170px;
+  height: 520px;
+  border-left: 9px solid rgba(0, 120, 190, 0.35);
+  border-right: 9px solid rgba(0, 160, 190, 0.35);
+  border-radius: 55% 45% 50% 50%;
+  transform: rotate(-5deg);
+}
+
+.section-alt::after {
+  content: "";
+  position: absolute;
+  right: 70px;
+  top: 120px;
+  width: 280px;
+  height: 560px;
+  border-top: 9px solid rgba(47, 107, 93, 0.42);
+  border-right: 9px solid rgba(47, 107, 93, 0.42);
+  border-radius: 42% 58% 48% 52%;
+}
+
+.section-alt .container {
+  position: relative;
+  z-index: 2;
 }
 
 .leadership-grid {
@@ -845,8 +910,32 @@ header {
 }
 
 .contact-section {
+  position: relative;
+  overflow: hidden;
   background: var(--bg);
   padding-top: 0;
+}
+
+.contact-section::before,
+.contact-section::after {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(0, 160, 190, 0.75);
+}
+
+.contact-section::before {
+  top: 90px;
+  left: 80px;
+  transform: rotate(42deg);
+}
+
+.contact-section::after {
+  right: 110px;
+  bottom: 120px;
+  transform: rotate(28deg);
 }
 
 .contact-section .container {
@@ -953,4 +1042,29 @@ header {
   color: var(--primary-dark);
   font-family: Georgia, serif;
   font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .section-portfolio::before,
+  .section-portfolio::after,
+  .section-portfolio .container::before,
+  .section-portfolio .container::after {
+    display: none;
+  }
+
+  .portfolio-grid {
+    transform: none;
+  }
+
+  .section-portfolio .card {
+    grid-template-columns: 1fr;
+  }
+
+  .section-portfolio .card::before {
+    position: static;
+  }
+
+  .section-portfolio .card p {
+    grid-column: auto;
+  }
 }
