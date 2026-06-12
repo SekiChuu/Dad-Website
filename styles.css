@@ -149,7 +149,9 @@ header {
   min-height: 58vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, rgba(47, 107, 93, 0.92), rgba(250, 243, 235, 0.95));
+  background:
+    linear-gradient(90deg, rgba(18, 25, 24, 0.65), rgba(18, 25, 24, 0.25)),
+    url("images/bg-destin-2.jpg") center center / cover no-repeat;
 }
 
 .hero-gallery .hero-content {
@@ -291,7 +293,7 @@ header {
   align-items: center;
   background:
     linear-gradient(90deg, rgba(18, 25, 24, 0.58) 0%, rgba(18, 25, 24, 0.34) 42%, rgba(18, 25, 24, 0.18) 100%),
-    url("images/bg-destin-1.jpg") center center / cover no-repeat;
+    url("images/beach.jpg") center center / cover no-repeat;
 }
 
 /* Decorative project section background using second image */
@@ -435,8 +437,8 @@ header {
 
 .section-alt {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)),
-    var(--bg-soft);
+    linear-gradient(rgba(247,244,239,0.92), rgba(247,244,239,0.92)),
+    url("images/bg-destin-1.jpg") center center / cover no-repeat;
 }
 
 .section-title {
