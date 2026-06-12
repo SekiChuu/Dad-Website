@@ -757,3 +757,124 @@ header {
 .card:hover {
   transform: translateY(-8px);
 }
+
+/* Final homepage refinement */
+
+.section-portfolio {
+  background: #f7f1e8;
+}
+
+.about-services-section {
+  background:
+    linear-gradient(rgba(235, 244, 240, 0.78), rgba(235, 244, 240, 0.84)),
+    url("images/waves2.png") center center / cover no-repeat;
+}
+
+.about-services-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.about-column,
+.services-column {
+  max-width: 540px;
+}
+
+.about-column p,
+.service-item p {
+  color: #253038;
+}
+
+.service-list {
+  display: grid;
+  gap: 26px;
+}
+
+.service-item {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.service-item::before {
+  content: attr(data-icon);
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1.45rem;
+  box-shadow: 0 16px 28px rgba(47, 107, 93, 0.22);
+}
+
+.service-item h3 {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+}
+
+.service-item p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.section-alt {
+  background: #f7f4ef;
+}
+
+.leadership-grid {
+  grid-template-columns: 1.45fr 0.75fr;
+  align-items: start;
+}
+
+.leader-card:first-child {
+  padding: 42px;
+}
+
+.leader-card:last-child {
+  padding: 34px;
+}
+
+.leader-card:last-child p {
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.contact-section {
+  background: var(--bg);
+  padding-top: 0;
+}
+
+.contact-section .container {
+  width: min(92%, 980px);
+  padding: 44px;
+  border-radius: 42px;
+  background:
+    linear-gradient(rgba(223, 240, 235, 0.35), rgba(223, 240, 235, 0.35)),
+    url("images/waves.png") center center / cover no-repeat;
+}
+
+.contact-card {
+  max-width: none;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+@media (max-width: 980px) {
+  .about-services-layout,
+  .leadership-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-column,
+  .services-column {
+    max-width: none;
+  }
+
+  .contact-section .container {
+    padding: 24px;
+  }
+}
