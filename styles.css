@@ -802,10 +802,8 @@ backdrop-filter: none;
 
 .about-column:hover,
 .services-column:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 34px 80px rgba(23, 29, 28, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform: none;
+  box-shadow: 0 16px 38px rgba(23, 29, 28, 0.14);
 }
 
 .about-services-section .container {
@@ -1074,13 +1072,13 @@ backdrop-filter: none;
 
 .about-column,
 .services-column {
-  max-width: none;
   min-height: 620px;
   padding: 76px;
   border-radius: 64px;
-  background: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.88);
   border: 2px solid rgba(255, 255, 255, 0.75);
-  box-shadow: 0 32px 90px rgba(23, 29, 28, 0.18);
+  box-shadow: 0 14px 34px rgba(23, 29, 28, 0.12);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .about-column p {
