@@ -660,3 +660,100 @@ header {
     font-size: clamp(2rem, 9vw, 2.7rem);
   }
 }
+
+.hero-home {
+  min-height: 72vh;
+  background:
+    linear-gradient(90deg, rgba(8, 18, 18, 0.68) 0%, rgba(8, 18, 18, 0.42) 42%, rgba(8, 18, 18, 0.08) 100%),
+    url("images/beach.jpg") center center / cover no-repeat;
+}
+
+.hero-content {
+  max-width: 620px;
+  padding: 84px 0;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 4.8vw, 4.6rem);
+  line-height: 1.02;
+}
+
+.hero-text {
+  font-size: 1rem;
+  max-width: 560px;
+}
+
+.section-portfolio {
+  background:
+    linear-gradient(rgba(247, 244, 239, 0.94), rgba(247, 244, 239, 0.94)),
+    url("images/bg-destin-1.jpg") center center / cover no-repeat;
+}
+
+.section-portfolio .grid {
+  align-items: stretch;
+}
+
+.section-portfolio .card {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 18px;
+  padding: 32px;
+}
+
+.section-portfolio .card::before {
+  content: attr(data-icon);
+  position: static;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  font-size: 1.4rem;
+}
+
+.section-portfolio .card h3 {
+  margin-top: 0;
+}
+
+.section-portfolio .card p {
+  grid-column: 2;
+}
+
+#about {
+  background: linear-gradient(180deg, #eef4f1, #f7f4ef);
+}
+
+.section-alt {
+  background:
+    linear-gradient(rgba(247,244,239,0.88), rgba(247,244,239,0.94)),
+    url("images/bg-destin-2.jpg") center center / cover no-repeat;
+}
+
+.contact-section {
+  background: var(--bg);
+}
+
+.hero-gallery {
+  background:
+    linear-gradient(90deg, rgba(8, 18, 18, 0.70), rgba(8, 18, 18, 0.30)),
+    url("images/bg-destin-2.jpg") center center / cover no-repeat;
+}
+
+.hero-gallery .hero-content,
+.hero-gallery .hero-text,
+.hero-gallery h1 {
+  color: #fff;
+}
+
+.hero-gallery .hero-text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
