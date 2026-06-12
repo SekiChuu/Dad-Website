@@ -180,16 +180,12 @@ header {
   height: 260px;
   object-fit: cover;
   display: block;
-  transition: transform 0.45s cubic-bezier(.2,.9,.3,1), filter 0.35s ease, opacity 0.45s ease;
-  will-change: transform, opacity;
-}
-
-.project-card:hover .gallery-image {
-  transform: scale(1.03) translateY(-4px);
+  /* reduce transitions to minimize repaints */
+  transition: opacity 240ms ease;
 }
 
 .gallery-image[loading="lazy"] {
-  opacity: 0.92;
+  opacity: 0.98;
 }
 
 .gallery-grid .project-card {
@@ -254,22 +250,7 @@ header {
 }
 
 /* Scroll reveal animations */
-.reveal {
-  opacity: 0;
-  transform: translateY(18px) scale(0.996);
-  --reveal-delay: 0ms;
-  transition: opacity 620ms cubic-bezier(.2,.9,.3,1) var(--reveal-delay), transform 620ms cubic-bezier(.2,.9,.3,1) var(--reveal-delay);
-  will-change: opacity, transform;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal { transition: none; transform: none; }
-}
+/* Removed scroll reveal animations to reduce JS work and repaint cost */
 
 .minimal-header {
   padding: 20px 0;
