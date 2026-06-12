@@ -825,11 +825,6 @@ header {
   padding-bottom: 8rem;
 }
 
-.about-column,
-.services-column {
-  max-width: 540px;
-}
-
 .about-column p,
 .service-item p {
   color: #253038;
@@ -1080,5 +1075,62 @@ header {
 
   .section-portfolio .card p {
     grid-column: auto;
+  }
+}
+
+/* About/Services final glass panel fix */
+
+#about.about-services-section {
+  background:
+    linear-gradient(
+      rgba(239, 244, 242, 0.35),
+      rgba(239, 244, 242, 0.50)
+    ),
+    url("images/rocks.png") center center / cover no-repeat;
+}
+
+.about-services-layout {
+  width: min(92%, 1500px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 54px;
+  align-items: stretch;
+}
+
+.about-column,
+.services-column {
+  max-width: none;
+  min-height: 620px;
+  padding: 76px;
+  border-radius: 64px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 32px 90px rgba(23, 29, 28, 0.18);
+}
+
+.about-column p {
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.service-list {
+  gap: 42px;
+}
+
+.service-item::before {
+  width: 70px;
+  height: 70px;
+}
+
+@media (max-width: 980px) {
+  .about-services-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-column,
+  .services-column {
+    min-height: auto;
+    padding: 38px;
+    border-radius: 34px;
   }
 }
