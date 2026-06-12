@@ -59,8 +59,203 @@ header {
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(14px);
-  background: rgba(247, 244, 239, 0.78);
+  background: rgba(247, 244, 239, 0.88);
   border-bottom: 1px solid rgba(83, 63, 42, 0.08);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color 0.22s ease;
+}
+
+.site-nav a:hover {
+  color: var(--primary-dark);
+}
+
+.section-footer {
+  margin-top: 38px;
+  display: flex;
+  justify-content: center;
+}
+
+.section-intro {
+  max-width: 760px;
+  margin: 0 0 36px;
+  color: var(--muted);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.project-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.project-card-content {
+  padding: 24px;
+}
+
+.project-card-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+}
+
+.hero-gallery {
+  min-height: 58vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(47, 107, 93, 0.92), rgba(250, 243, 235, 0.95));
+}
+
+.hero-gallery .hero-content {
+  color: #1f2328;
+}
+
+.hero-gallery .hero h1 {
+  color: #13221c;
+  text-shadow: none;
+}
+
+.hero-gallery .eyebrow {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary-dark);
+  border: 1px solid rgba(47, 107, 93, 0.12);
+}
+
+.hero-gallery .hero-text {
+  color: rgba(31, 35, 40, 0.92);
+}
+
+/* Gallery image animations and lightbox */
+.gallery-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s cubic-bezier(.2,.9,.3,1), filter 0.35s ease, opacity 0.45s ease;
+  will-change: transform, opacity;
+}
+
+.project-card:hover .gallery-image {
+  transform: scale(1.03) translateY(-4px);
+}
+
+.gallery-image[loading="lazy"] {
+  opacity: 0.92;
+}
+
+.gallery-grid .project-card {
+  overflow: hidden;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(11,12,14,0.6);
+  z-index: 2000;
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+}
+
+.lightbox-inner {
+  max-width: 92vw;
+  max-height: 86vh;
+  text-align: center;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 78vh;
+  border-radius: 14px;
+  box-shadow: 0 36px 80px rgba(0,0,0,0.5);
+  transition: transform 0.28s ease, opacity 0.28s ease;
+}
+
+.lightbox-caption {
+  color: #fff;
+  margin-top: 14px;
+  opacity: 0.9;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: rgba(0,0,0,0.46);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  font-size: 22px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.lightbox-close { top: 22px; right: 22px; }
+.lightbox-prev { left: 22px; }
+.lightbox-next { right: 22px; }
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  transform: translateY(-2px);
+}
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px) scale(0.996);
+  transition: opacity 620ms cubic-bezier(.2,.9,.3,1), transform 620ms cubic-bezier(.2,.9,.3,1);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none; transform: none; }
 }
 
 .minimal-header {
@@ -371,7 +566,8 @@ header {
 @media (max-width: 980px) {
   .about-layout,
   .grid,
-  .leadership-grid {
+  .leadership-grid,
+  .gallery-grid {
     grid-template-columns: 1fr;
   }
 
@@ -385,6 +581,16 @@ header {
 
   .section {
     padding: 82px 0;
+  }
+
+  .header-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
   }
 }
 
