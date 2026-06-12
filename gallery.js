@@ -64,8 +64,8 @@
 
   items.forEach((el, i) => {
     el.classList.add('reveal');
-    el.style.transitionDelay = `${Math.min(i, 12) * 60}ms`;
   });
+  // Avoid setting many inline styles to reduce layout thrashing; use CSS for timing
 
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {

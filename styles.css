@@ -17,7 +17,7 @@ html {
   --accent: #ead7c2;
   --border: rgba(83, 63, 42, 0.11);
   --shadow: 0 18px 50px rgba(23, 29, 28, 0.08);
-  --shadow-hover: 0 28px 70px rgba(23, 29, 28, 0.14);
+  --shadow-hover: 0 20px 34px rgba(23, 29, 28, 0.12);
   --radius-xl: 34px;
   --radius-lg: 26px;
   --radius-md: 18px;
@@ -58,8 +58,9 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(14px);
-  background: rgba(247, 244, 239, 0.88);
+  /* reduce heavy backdrop-filter for smoother scrolling */
+  backdrop-filter: blur(6px);
+  background: rgba(247, 244, 239, 0.95);
   border-bottom: 1px solid rgba(83, 63, 42, 0.08);
 }
 
@@ -106,6 +107,14 @@ header {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
+
+/* small stagger for project cards using CSS only */
+.gallery-grid .project-card:nth-child(1) { --reveal-delay: 60ms; }
+.gallery-grid .project-card:nth-child(2) { --reveal-delay: 120ms; }
+.gallery-grid .project-card:nth-child(3) { --reveal-delay: 180ms; }
+.gallery-grid .project-card:nth-child(4) { --reveal-delay: 240ms; }
+.gallery-grid .project-card:nth-child(5) { --reveal-delay: 300ms; }
+.gallery-grid .project-card:nth-child(6) { --reveal-delay: 360ms; }
 
 .project-card {
   border-radius: var(--radius-xl);
@@ -160,6 +169,39 @@ header {
 
 .hero-gallery .hero-text {
   color: rgba(31, 35, 40, 0.92);
+}
+
+/* Decorative background images for main page (low-opacity, non-interactive)
+   Uses remote URLs and will be covered by local images if downloaded to /images */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.12;
+  filter: blur(2px);
+  mix-blend-mode: lighten;
+}
+
+body::before {
+  right: 6%;
+  bottom: -6%;
+  width: 520px;
+  height: 420px;
+  background: url("https://media.discordapp.net/attachments/1514774948915187752/1514805247397335251/Destin_1.jpg?ex=6a2cb3d2&is=6a2b6252&hm=dc80ff048f5ce611030640929002a62bb480259292d732ffd332bdb952621a1d&=&format=webp&width=1285&height=856") right bottom / cover no-repeat;
+}
+
+body::after {
+  left: 4%;
+  bottom: -4%;
+  width: 420px;
+  height: 360px;
+  background: url("https://media.discordapp.net/attachments/1514774948915187752/1514805247015387308/Destin_2.jpg?ex=6a2cb3d2&is=6a2b6252&hm=8be1af8a42e1564490e63969665e42095b74cfebf1971961683323a3b77b5889&=&format=webp") left bottom / cover no-repeat;
+}
+
+@media (max-width: 980px) {
+  body::before, body::after { display: none; }
 }
 
 /* Gallery image animations and lightbox */
@@ -245,7 +287,8 @@ header {
 .reveal {
   opacity: 0;
   transform: translateY(18px) scale(0.996);
-  transition: opacity 620ms cubic-bezier(.2,.9,.3,1), transform 620ms cubic-bezier(.2,.9,.3,1);
+  --reveal-delay: 0ms;
+  transition: opacity 620ms cubic-bezier(.2,.9,.3,1) var(--reveal-delay), transform 620ms cubic-bezier(.2,.9,.3,1) var(--reveal-delay);
   will-change: opacity, transform;
 }
 
@@ -469,8 +512,9 @@ header {
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   padding: 34px;
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 22px rgba(23,29,28,0.06);
+  /* avoid expensive backdrop-filter where possible */
+  backdrop-filter: none;
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -483,7 +527,8 @@ header {
   inset: 0 auto auto 0;
   width: 140px;
   height: 140px;
-  background: radial-gradient(circle, rgba(216, 235, 229, 0.55), transparent 68%);
+  /* simplified decorative gradient to reduce paint cost */
+  background: radial-gradient(circle, rgba(216, 235, 229, 0.35), transparent 68%);
   pointer-events: none;
 }
 

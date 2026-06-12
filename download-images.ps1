@@ -11,3 +11,7 @@ Invoke-WebRequest -Uri "https://media.discordapp.net/attachments/151477494891518
 Invoke-WebRequest -Uri "https://media.discordapp.net/attachments/1514774948915187752/1514801616191099052/image.png?ex=6a2cb070&is=6a2b5ef0&hm=42e6a2ff7d530e3f588b1806138aa3b49c2672d764a5fa884303550ec7a426e4&=&format=webp&quality=lossless&width=1376&height=911" -OutFile ".\images\project6.png"
 
 Write-Host "Finished downloading images to .\images"
+
+# Additional background images for main page
+Invoke-WebRequest -Uri "https://media.discordapp.net/attachments/1514774948915187752/1514805247397335251/Destin_1.jpg?ex=6a2cb3d2&is=6a2b6252&hm=dc80ff048f5ce611030640929002a62bb480259292d732ffd332bdb952621a1d&=&format=webp&width=1285&height=856" -OutFile ".\images\bg-destin-1.jpg"
+Invoke-WebRequest -Uri "https://media.discordapp.net/attachments/1514774948915187752/1514805247015387308/Destin_2.jpg?ex=6a2cb3d2&is=6a2b6252&hm=8be1af8a42e1564490e63969665e42095b74cfebf1971961683323a3b77b5889&=&format=webp" -OutFile ".\images\bg-destin-2.jpg"
