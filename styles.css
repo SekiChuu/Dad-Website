@@ -769,32 +769,43 @@ header {
 }
 
 .about-services-section {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
   background:
     linear-gradient(
-      rgba(239,244,242,0.68),
-      rgba(239,244,242,0.78)
+      rgba(239, 244, 242, 0.42),
+      rgba(239, 244, 242, 0.58)
     ),
     url("images/rocks.png") center center / cover no-repeat;
 }
 
 .about-column,
 .services-column {
-  background: rgba(255,255,255,0.82);
+  max-width: none;
+  min-height: 560px;
+  padding: 72px;
+  border-radius: 54px;
 
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 
-  border: 1px solid rgba(255,255,255,0.55);
+  border: 1px solid rgba(255, 255, 255, 0.72);
 
   box-shadow:
-    0 25px 50px rgba(0,0,0,0.10);
+    0 28px 70px rgba(23, 29, 28, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
 
-  transition: transform .3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-column:hover,
 .services-column:hover {
   transform: translateY(-6px);
+  box-shadow:
+    0 34px 80px rgba(23, 29, 28, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .about-services-section .container {
@@ -805,7 +816,8 @@ header {
 .about-services-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  gap: 46px;
+  align-items: stretch;
 }
 
 .about-services-section {
