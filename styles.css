@@ -769,33 +769,32 @@ header {
 }
 
 .about-services-section {
-  position: relative;
-  overflow: hidden;
   background:
-    linear-gradient(rgba(235, 244, 240, 0.80), rgba(235, 244, 240, 0.88)),
-    url("images/waves2.png") center center / cover no-repeat;
+    linear-gradient(
+      rgba(239,244,242,0.68),
+      rgba(239,244,242,0.78)
+    ),
+    url("images/rocks.png") center center / cover no-repeat;
 }
 
-.about-services-section::before {
-  content: "";
-  position: absolute;
-  top: 70px;
-  left: 55px;
-  width: 130px;
-  height: 105px;
-  border: 8px solid rgba(0, 128, 160, 0.16);
-  border-radius: 48% 52% 42% 58%;
+.about-column,
+.services-column {
+  background: rgba(255,255,255,0.82);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.55);
+
+  box-shadow:
+    0 25px 50px rgba(0,0,0,0.10);
+
+  transition: transform .3s ease;
 }
 
-.about-services-section::after {
-  content: "";
-  position: absolute;
-  bottom: 90px;
-  right: 80px;
-  width: 95px;
-  height: 80px;
-  border: 8px solid rgba(47, 107, 93, 0.14);
-  border-radius: 60% 40% 52% 48%;
+.about-column:hover,
+.services-column:hover {
+  transform: translateY(-6px);
 }
 
 .about-services-section .container {
@@ -806,8 +805,12 @@ header {
 .about-services-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  align-items: start;
+  gap: 5rem;
+}
+
+.about-services-section {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }
 
 .about-column,
@@ -858,32 +861,12 @@ header {
 .section-alt {
   position: relative;
   overflow: hidden;
-  background: #f7f4ef;
-}
-
-.section-alt::before {
-  content: "";
-  position: absolute;
-  left: 60px;
-  top: 170px;
-  width: 170px;
-  height: 520px;
-  border-left: 9px solid rgba(0, 120, 190, 0.35);
-  border-right: 9px solid rgba(0, 160, 190, 0.35);
-  border-radius: 55% 45% 50% 50%;
-  transform: rotate(-5deg);
-}
-
-.section-alt::after {
-  content: "";
-  position: absolute;
-  right: 70px;
-  top: 120px;
-  width: 280px;
-  height: 560px;
-  border-top: 9px solid rgba(47, 107, 93, 0.42);
-  border-right: 9px solid rgba(47, 107, 93, 0.42);
-  border-radius: 42% 58% 48% 52%;
+  background:
+    linear-gradient(
+      rgba(247,244,239,0.90),
+      rgba(247,244,239,0.94)
+    ),
+    url("images/beach2.png") center center / cover no-repeat;
 }
 
 .section-alt .container {
@@ -898,6 +881,11 @@ header {
 
 .leader-card:first-child {
   padding: 42px;
+
+  border-top: 6px solid var(--primary);
+
+  box-shadow:
+    0 25px 50px rgba(0,0,0,0.10);
 }
 
 .leader-card:last-child {
@@ -914,28 +902,6 @@ header {
   overflow: hidden;
   background: var(--bg);
   padding-top: 0;
-}
-
-.contact-section::before,
-.contact-section::after {
-  content: "";
-  position: absolute;
-  width: 110px;
-  height: 8px;
-  border-radius: 999px;
-  background: rgba(0, 160, 190, 0.75);
-}
-
-.contact-section::before {
-  top: 90px;
-  left: 80px;
-  transform: rotate(42deg);
-}
-
-.contact-section::after {
-  right: 110px;
-  bottom: 120px;
-  transform: rotate(28deg);
 }
 
 .contact-section .container {
@@ -966,6 +932,42 @@ header {
   .contact-section .container {
     padding: 24px;
   }
+}
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+
+  top: 60px;
+  left: 80px;
+
+  width: 220px;
+  height: 220px;
+
+  background:
+    url("images/waves2.png")
+    center center / contain no-repeat;
+
+  opacity: 0.18;
+}
+
+.contact-section::after {
+  content: "";
+  position: absolute;
+
+  bottom: 60px;
+  right: 80px;
+
+  width: 220px;
+  height: 220px;
+
+  background:
+    url("images/waves2.png")
+    center center / contain no-repeat;
+
+  opacity: 0.18;
+
+  transform: rotate(180deg);
 }
 
 /* Portfolio polish: image blocks + decorative side lines */
